@@ -1,10 +1,11 @@
+import os
 import datetime
 import requests
 
 
 def nutritionix():
-    nutritionix_app_id = "7fc6a9c1"
-    nutritionix_api_key = "7655eb45295200a1c012a21ea8ff038b"
+    nutritionix_app_id = os.environ.get("NUTRITIONIX_APP_ID")
+    nutritionix_api_key = os.environ.get("NUTRITIONIX_API_KEY")
     nutritionix_exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
     nutritionix_headers = {
         "x-app-id": nutritionix_app_id,
@@ -36,7 +37,9 @@ HEIGHT = "165"
 AGE = "28"
 
 SHEETY_ENDPOINT = "https://api.sheety.co/f1810fe8ae8de2f741a0e4c58034e85c/workoutTracker/workouts"
-SHEETY_AUTH = ("zoul", "#72rv+vaesj7t#")
+SHEETY_USERNAME = os.environ.get("SHEETY_USERNAME")
+SHEETY_PASSWORD = os.environ.get("SHEETY_PASSWORD")
+SHEETY_AUTH = (SHEETY_USERNAME, SHEETY_PASSWORD)
 
 # --------------- MAIN --------------- #
 start = input("Do you want to add or delete workout? ").lower()
