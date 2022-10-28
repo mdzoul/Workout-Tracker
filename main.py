@@ -1,9 +1,11 @@
+"""Coded a workout tracker with Nutritionix and Sheety!"""
 import os
 import datetime
 import requests
 
 
 def nutritionix():
+    """Easy call to Nutritionix API"""
     nutritionix_app_id = os.environ.get("NUTRITIONIX_APP_ID")
     nutritionix_api_key = os.environ.get("NUTRITIONIX_API_KEY")
     nutritionix_exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
@@ -69,4 +71,3 @@ elif start == "delete":
     else:
         sheety_response = requests.delete(url=f"{SHEETY_ENDPOINT}/{object_id}", auth=SHEETY_AUTH)
         print("Workout deleted")
-
