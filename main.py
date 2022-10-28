@@ -38,7 +38,7 @@ WEIGHT = "73"
 HEIGHT = "165"
 AGE = "28"
 
-SHEETY_ENDPOINT = "https://api.sheety.co/f1810fe8ae8de2f741a0e4c58034e85c/workoutTracker/workouts"
+SHEETY_ENDPOINT = os.environ.get("SHEETY_ENDPOINT")
 SHEETY_USERNAME = os.environ.get("SHEETY_USERNAME")
 SHEETY_PASSWORD = os.environ.get("SHEETY_PASSWORD")
 SHEETY_AUTH = (SHEETY_USERNAME, SHEETY_PASSWORD)
